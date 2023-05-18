@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="display"></h1>
+    <div class="numberpads">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>0</button>
+    </div>
+    <div class="operators">
+        <button>+</button>
+        <button>-</button>
+        <button>*</button>
+        <button>/</button>
+    </div>
+        <button id="equal">=</button>
+</body>
+
+<script>
+    let display = document.getElementById("display");
+    let numberpads = document.querySelectorAll(".numberpads > button");
+    let operatorsButtons = document.querySelectorAll(".operators > button");
+    let equalButton = document.getElementById("equal");
+
+    let firstNumber = "";
+    let secondNumber = "";
+    let numfirst = true;
+    let operators = null;
+
+    for(let x=0; x<numberpads.length; x++){
+        numberpads[x].addEventListener("click", function (event){
+            if(numfirst === true){
+                firstNumber +=event.target.innerText
+            }else{
+                secondNumber +=event.target.innerText
+            }
+            display.innerText = display.innerText + event.target.innerText;
+        }); 
+    }
+
+    for(let x=0; x<operatorsButtons.length; x++){
+        operatorsButtons[x].addEventListener("click", function(event){
+            numfirst = false;
+            operators = event.target.innerText;
+            display.innerText = display.innerText + event.target.innerText;
+        });
+    }
+
+    equalButton.addEventListener("click", function (){
+        display.innerText = calculate(firstNumber, secondNumber, operators);
+    });
+
+    function calculate(firstNumber, SecondNumber, operaters){
+        switch (operators){
+            case "+":
+                return Number(firstNumber) + Number(secondNumber);
+            case "-":
+                return Number(firstNumber) - Number(secondNumber);
+            case "*":
+                return Number(firstNumber) * Number(secondNumber);
+            case "/":
+                return Number(firstNumber) / Number(secondNumber);
+            default:
+                break;    
+        }
+    }
+</script>
+</html>

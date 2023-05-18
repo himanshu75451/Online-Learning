@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      /* CSS Goes here  */
+      .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #filter{
+        text-align: center;
+      }
+      #voucher-container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+      }
+      #voucher-container >div{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #voucher-container > div > img{
+        width: 100%;
+      }
+      #voucher-container > div > button{
+        background-color: rgb(47, 185, 240);
+        border: none;
+        color: #fff;
+        padding: 6px;
+        border-radius: 4px;
+        margin: 5px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Voucher Shop</h1>
+      <a href="./index.html">Home</a>
+      <a href="./my-voucher.html">My Voucher</a>
+    </div>
+    <div id="filter">
+      <h3>Filter By Price Range</h3>
+      <input placeholder="From" type="number" id="lower" />
+      <input placeholder="To" type="number" id="upper" />
+      <button id="filter-btn">Filter</button>
+    </div>
+    <div id="voucher-container">
+      <!-- Here Append All the Vouchers  -->
+    </div>
+  </body>
+  <script>
+    // All JS goes here
+    // let fetchdata2 = [];
+    // async function FetchData(){
+    //   try{
+    //     let request = await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-vouchers")
+    //     let data = await request.json();
+    //     fetchdata2 = data.map(function (e){
+    //       return{
+    //         image:e.jpg,
+    //         name:e.name,
+    //         price:e.price,
+    //       };
+    //     })
+    //     // console.log(request);
+    //       Display(fetchdata2);
+    //       // console.log(request.data);
+    //   }catch(error){
+    //     console.log(error);
+    //   }
+    // }
+    // FetchData();
+
+    const api = "https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-vouchers"
+    let apiData = []
+    fetch(api)
+    .then((request)=>{
+      return request.json()
+    })
+    .then((data)=>{
+      apiData=data.data[0].vouchers;
+      // for(let x=0;x<apiData.length; x++){
+      //   console.log(apiData[x]);
+        Display(apiData);
+    })
+
+    let CartData = JSON.parse(localStorage.getItem("vouchers")) || [];
+    let Container = document.getElementById("voucher-container");
+
+    function Display(data){
+      Container.innerHTML = "";
+      data.forEach((product) => {
+       // console.log(products);
+       // console.log(data);
+        let card = document.createElement("div");
+        let image = document.createElement("img");
+        let name = document.createElement("h2");
+        let price = document.createElement("h4");
+        let buyCard = document.createElement("button");
+
+            buyCard.textContent = "Buy";
+            image.src = product.image;
+            name.textContent = product.name;
+            price.textContent = `₹${product.price}`;
+
+            buyCard.addEventListener("click",() =>{
+              if(buydata(product)){
+                alert("product already buyed")
+              }else{
+                CartData.push({...product,quantity:1});
+                localStorage.setItem("vouchers",JSON.stringify(CartData))
+                alert("product buyed")
+              }
+            })
+
+            card.append(image,name,price,buyCard);
+            Container.append(card);
+      });
+    }
+
+    function buydata(product){
+      for(let x=0; x<CartData.length; x++){
+        if(CartData[x].id === product.id){
+          return true;
+        }
+      }
+      return false;
+    }
+  </script>
+</html>

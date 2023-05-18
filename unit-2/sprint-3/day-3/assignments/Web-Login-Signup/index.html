@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up Page</title>
+  <style>
+      /* Write all necessery css here  */
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <a href="./index.html">Signup</a>
+    <a href="./signin.html">Signin</a>
+  </div>
+  <div id="signup">
+    <h1>Please Enter Your Details</h1>
+    <form>
+      <input type="text" id="name">
+      <input type="email" id="email">
+      <input type="password"  id="password">
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</body>
+<script>
+  let formData = document.querySelector("form");
+  let nameData = document.getElementById("name");
+  let emailData = document.getElementById("email");
+  let passwordData = document.getElementById("password");
+
+  let MyData = [];
+
+  formData.addEventListener("submit", function(event){
+    event.preventDefault();
+    let formDatabase = {
+      name : formData.value,
+      email : emailData.value,
+      password : passwordData.value
+    }
+    MyData.push(formDatabase);
+    localStorage.setItem("account-data",JSON.stringify(MyData))
+  })
+  
+</script>
+
+</html>

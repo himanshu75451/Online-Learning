@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Calculator</title>
+    <style>
+        #Cont{
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #Cont{
+            color: #0097A7 ;
+        }
+        .box{
+            width: 28%;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(4, 4em);
+            grid-template-rows:repeat(5, 4em);
+            gap: 10px;
+            padding: 30px 0px 30px 0px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .box > button{
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .box > input{
+            grid-column-start:1 ;
+            grid-column-end:5 ;
+            border:none;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .box > button:not(.empty, .plus){
+            background-color: transparent;
+        }
+        .plus{
+            background-color: black;
+            color: white;
+        }
+        .empty{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="Cont">
+        <h1>Masai Calculator</h1>
+        <div class="box">
+            <input type="text" disabled>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="plus">+</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="plus">-</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="plus">x</button>
+            <button class="empty">C</button>
+            <button>0</button>
+            <button class="plus">=</button>
+            <button class="plus">/</button>
+        </div>
+    </div>
+</body>
+</html>

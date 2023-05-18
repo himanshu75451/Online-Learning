@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dominos</title>
+    <style>
+      /* Write all styles here  */
+      .nav{
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .nav > div{
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px 0px 20px ;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .nav > div > div{
+        margin: auto;
+        display: flex;
+      }
+      .nav > div > div > button{
+        background-color: red;
+        border: none;
+        color: white;
+        padding: 20px  
+      }
+      .nav > div > h1{
+        color: rgb(24, 144, 192);
+      }
+      .nav > div > div > p{
+        color: rgb(24, 144, 192);
+      }
+
+      .top{
+        width: 100%;
+      }
+      .top > h1{
+        padding-left: 100px;
+      }
+      .top > div{
+        width: 100%;
+        display: grid;
+        box-sizing: border-box;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px 15px;
+        padding: 0px 100px 40px 100px;
+        text-align: center;
+        color: white;
+      }
+      .top > div > div {
+        background-color: red;
+        padding: 20px 20px 20px 20px;
+      }
+      .top > div > div > img{
+        width: 50%;
+        margin: auto;
+        display: block;
+      }
+      .top > div > div > button{
+        color: red;
+        padding: 5px 15px 5px 15px;
+      }
+
+
+      .mid{
+        width: 100%;
+        margin: auto;
+      }
+      .mid > h1{
+        padding-left: 100px;
+      }
+      .mid > div{
+        width: 100%;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px 15px;
+        text-align: center;
+      }
+      .mid > div > div {
+        padding: 20px 20px 20px 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .mid > div > div > img{
+        width: 20%;
+        margin: auto;
+        display: block;
+      }
+      .mid > div > div > button{
+        color: red;
+        padding: 5px 15px 5px 15px;
+      }
+
+
+      .bottom{
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px
+      }
+      .bottom > div > img{
+        width: 50%;
+        display: flex;
+      }
+      .bottom > div > div > img{
+        width: 50%;
+        display: flex;
+      }
+      .bottom > div > div > div > img{
+        width: 50%;
+        display: flex;
+      }
+
+
+
+      @media only screen and (max-width: 1000px) {
+        /* Medium Screen  */
+      .nav > div > div >p{
+        margin: auto;
+        display: none;
+      }
+      .top > div{
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .mid > div{
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .bottom{
+        width: 100%;
+        margin: auto;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        /* padding: 40px 100px 40px 100px; */
+      }
+      }
+
+      @media only screen and (max-width: 600px) {
+        /* Small Screen  */
+      .nav > div > div > p{
+        margin: auto;
+        display: none;
+      }
+      .top > div{
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .mid > div{
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .bottom{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <!-- Create the Navbar here  -->
+      <!-- Use Flex to achieve the layout  -->
+      <div>
+        <h1>Domino's Pizza</h1>
+        <div>
+          <p>OUR MENU</p>
+          <p> DOMINO'S STPRES</p>
+          <p>GIFT CARD</p>
+          <p>CORPORATE ENQUIRY</p>
+          <p>CONTACT</p>
+        </div>
+        <div>
+          <button>Download App</button>
+        </div>
+      </div>
+    </div>
+    <div class="top">
+      <h1>Order</h1>
+      <div>
+        <!-- Here should have 6 divs -->
+        <!-- Use grid to achieve the layout -->
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Error">
+          <h3>VEG PIZZA</h3>
+          <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas, it's softer and tastier</p>
+          <button>VIEW ALL</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Error">
+          <h3>VEG PIZZA</h3>
+          <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas, it's softer and tastier</p>
+          <button>VIEW ALL</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Error">
+          <h3>VEG PIZZA</h3>
+          <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas, it's softer and tastier</p>
+          <button>VIEW ALL</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Error">
+          <h3>VEG PIZZA</h3>
+          <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas, it's softer and tastier</p>
+          <button>VIEW ALL</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Error">
+          <h3>VEG PIZZA</h3>
+          <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas, it's softer and tastier</p>
+          <button>VIEW ALL</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Error">
+          <h3>VEG PIZZA</h3>
+          <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas, it's softer and tastier</p>
+          <button>VIEW ALL</button>
+        </div>
+      </div>
+    </div>
+    <div class="mid">
+      <h1>Explore</h1>
+      <div>
+        <!-- Here should have 8 divs -->
+        <!-- Use grid to achieve the layout -->
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <P>________________________________</P>
+          <button>DISCOVER PIZZA</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <P>________________________________</P>
+          <button>DISCOVER PIZZA</button>
+        </div><div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <P>________________________________</P>
+          <button>DISCOVER PIZZA</button>
+        </div><div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <P>________________________________</P>
+          <button>DISCOVER PIZZA</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <P>________________________________</P>
+          <button>DISCOVER PIZZA</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <P>________________________________</P>
+          <button>DISCOVER PIZZA</button>
+        </div><div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <P>________________________________</P>
+          <button>DISCOVER PIZZA</button>
+        </div><div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <P>________________________________</P>
+          <button>DISCOVER PIZZA</button>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <!-- Use Flex to achieve the layout  -->
+      <div>
+        <!-- Left hand side part  -->
+        <img src="https://www.dominos.co.in/assets/new_app_img@2x.png" alt="Error">
+      </div>
+      <div>
+        <!-- Right hand side part  -->
+        <h1>Unlock Exclusive Offers</h1>
+        <p>For lightning fast ordering experience download the Domino's app</p>
+        <div>
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%202.47.09%20PM_558991.png" alt="Error">
+          <div>
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%202.47.43%20PM_652243.png" alt="Error">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

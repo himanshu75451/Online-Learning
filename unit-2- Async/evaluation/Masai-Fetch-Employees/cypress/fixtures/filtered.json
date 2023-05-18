@@ -1,0 +1,54 @@
+{
+    "male": [
+        {
+            "id": 3,
+            "image": "https://i.imgur.com/9xEcfJj.jpg",
+            "name": "Etta McGairl",
+            "gender": "male",
+            "department": "operations",
+            "salary": 42000
+        },
+        {
+            "id": 8,
+            "image": "https://i.imgur.com/9xEcfJj.jpg",
+            "name": "Athena Broadey",
+            "gender": "male",
+            "department": "marketing",
+            "salary": 66000
+        },
+        {
+            "id": 9,
+            "image": "https://i.imgur.com/9xEcfJj.jpg",
+            "name": "Luisa Artois",
+            "gender": "male",
+            "department": "engineering",
+            "salary": 45000
+        }
+    ],
+    "female": [
+        {
+            "id": 1,
+            "image": "https://i.imgur.com/9xEcfJj.jpg",
+            "name": "Donald Surgen",
+            "gender": "female",
+            "department": "engineering",
+            "salary": 57000
+        },
+        {
+            "id": 2,
+            "image": "https://i.imgur.com/9xEcfJj.jpg",
+            "name": "Brynn Wildblood",
+            "gender": "female",
+            "department": "finance",
+            "salary": 27000
+        },
+        {
+            "id": 4,
+            "image": "https://i.imgur.com/9xEcfJj.jpg",
+            "name": "Alexandros Renihan",
+            "gender": "female",
+            "department": "engineering",
+            "salary": 40000
+        }
+    ]
+}

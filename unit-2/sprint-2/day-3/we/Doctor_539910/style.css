@@ -1,0 +1,59 @@
+/* Write your styles here  */
+
+#header{
+  text-align: center;
+}
+#doctors{
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 20px;
+}
+#doctors > div{
+  /* padding: 20px 20px 20px 20px; */
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding-bottom: 20px;
+}
+#doctors img{
+  width: 100%;
+}
+#doctors > div h3,h6{
+  margin: 0px 1px 0px 1px;
+}
+#doctors > div > div{
+  display: flex;
+  justify-content:space-around;
+}
+#service{
+  width: 85%;
+  margin: auto;
+  margin-top: 40px; 
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:10px 20px;
+  text-align: center;
+}
+#service > div{
+  display: block;
+}
+/* keep media queries at the bottom */
+/* Medium screens */
+@media all and (min-width: 451px) and (max-width: 750px) {
+#doctors{
+  grid-template-columns: repeat(2, 1fr);
+}
+#service{
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+/* Small screens */
+@media all and (min-width: 100px) and (max-width: 450px) {
+  #doctors{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #service{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

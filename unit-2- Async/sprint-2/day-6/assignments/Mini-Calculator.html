@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculate</title>
+    <style>
+        #Cont{
+            width: 100%;
+            display: flex;
+            margin: 20px;
+            gap: 10px;
+            justify-content: center;
+        }
+        .box{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="Cont">
+        <input type="text" placeholder="Enter 1st Number" id="num1">
+        <input type="text" placeholder="Enter 2st Number" id="num2">
+    </div>
+    <div class="box">
+        <button onclick="add()">Add</button>
+        <button onclick="sub()">Subtract</button>
+        <button onclick="mul()">Multiply</button>
+        <button onclick="div()">Divide</button>
+    </div>
+</body>
+<script>
+    let  Value1 = document.getElementById("num1")
+    let  Value2 = document.getElementById("num2")
+
+    function add(){
+        alert(Number(Value1.value) + Number(Value2.value));
+    }
+    function sub(){
+        alert(Number(Value1.value) - Number(Value2.value));
+    }
+    function mul(){
+        alert(Number(Value1.value) * Number(Value2.value));
+    }
+    function div(){
+        alert(Number(Value1.value) / Number(Value2.value));
+    }
+</script>
+</html>

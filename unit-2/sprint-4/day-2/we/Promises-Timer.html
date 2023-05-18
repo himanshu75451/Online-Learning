@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Timer</title>
+</head>
+<body>
+    <script>
+        function waitPromise(ms){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(() =>{
+                    resolve("Resolved");
+                }, ms);
+            })
+            return promise;
+        }
+
+       let newpro =  waitPromise(4000);  //4s
+        newpro.then((Element) =>{
+        console.log(Element);
+       });
+    </script>
+</body>
+</html>

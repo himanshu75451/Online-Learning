@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area I</title>
+    <style>
+        .box{
+            display: grid;
+            grid-template-columns: repeat(4,10em);
+            grid-template-rows: repeat(3,5em);
+            gap: 10px;
+            padding: 20px
+        }
+        .box > div{
+            background-color:rgb(90, 89, 89);
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+            font-size: 28px
+        }
+        .box > div:nth-child(1){
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .box > div:nth-child(2){
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+        .box > div:nth-child(3){
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        .box > div:nth-child(4){
+            grid-column-start: 2;
+            grid-column-end: 5;
+        }
+        .box > div:nth-child(5){
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+    </div>
+</body>
+</html>

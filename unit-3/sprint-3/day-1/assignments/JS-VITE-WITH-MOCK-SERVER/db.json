@@ -1,0 +1,79 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Abram Langtry",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 1,
+      "salary": 95000
+    },
+    {
+      "id": 2,
+      "name": "Flossy Arrell",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 2,
+      "salary": 20000
+    },
+    {
+      "id": 3,
+      "name": "yash",
+      "image": "/images/avatar/avatar2.jpeg",
+      "department": "3",
+      "salary": "10000000000"
+    },
+    {
+      "name": "Himanshu",
+      "image": "/images/avatar/avatar2.jpeg",
+      "department": 4,
+      "salary": 100000,
+      "createdAt": 1670325954162,
+      "id": "tEYFrHNsdO"
+    },
+    {
+      "name": "John Doe",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 1,
+      "salary": 80000,
+      "id": "R4dvtugCT2"
+    },
+    {
+      "name": "Hims",
+      "image": "images/avatar/avatar1.jpeg",
+      "department": "7",
+      "salary": "300000000",
+      "createdAt": 1679147825760,
+      "id": "ru9HBNdtkQ"
+    },
+    {
+      "name": "vishal",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": "5",
+      "salary": "500",
+      "createdAt": 1679148875781,
+      "id": "OY9K9mIX7B"
+    },
+    {
+      "name": "vishal",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": "5",
+      "salary": "500",
+      "createdAt": 1679148949781,
+      "id": "it0YXSkbby"
+    },
+    {
+      "id": "JN5yI5O4ef",
+      "name": "yogesh",
+      "image": "/images/avatar/avatar2.jpeg",
+      "department": "5",
+      "salary": "234567"
+    },
+    {
+      "name": "hello",
+      "image": "/images/avatar/avatar2.jpeg",
+      "department": "8",
+      "salary": "10000000000",
+      "createdAt": 1679286226349,
+      "id": "ZmnC5nRzJu"
+    }
+  ]
+}

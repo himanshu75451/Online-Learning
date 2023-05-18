@@ -1,0 +1,62 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Himanshu",
+      "image": "images/avatar/avatar1.jpeg",
+      "department": "300",
+      "salary": 400000000
+    },
+    {
+      "id": 2,
+      "name": "Flossy Arrell",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 2,
+      "salary": 20000
+    },
+    {
+      "id": 3,
+      "name": "Giorgio Antonioni",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 3,
+      "salary": 95000
+    },
+    {
+      "name": "Himanshu",
+      "image": "/images/avatar/avatar2.jpeg",
+      "department": 4,
+      "salary": 100000,
+      "createdAt": 1670325954162,
+      "id": "tEYFrHNsdO"
+    },
+    {
+      "name": "John Doe",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 1,
+      "salary": 80000,
+      "id": "R4dvtugCT2"
+    },
+    {
+      "id": "kUYkXQW41y",
+      "name": "Yogesh",
+      "image": "images/avatar/avatar1.jpeg",
+      "department": "35",
+      "salary": 2000000
+    },
+    {
+      "id": "jY61R9CgUD",
+      "name": "Him's",
+      "image": "images/avatar/avatar2.jpeg",
+      "department": "45",
+      "salary": 25500000
+    },
+    {
+      "name": "Yash",
+      "image": "images/avatar/avatar1.jpeg",
+      "department": "20",
+      "salary": 4000000,
+      "createdAt": 1682050624465,
+      "id": "mZ4Mgq7lon"
+    }
+  ]
+}

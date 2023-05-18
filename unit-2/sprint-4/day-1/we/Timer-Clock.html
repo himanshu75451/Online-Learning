@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+    <style>
+
+        div{
+            width: 50%;
+            margin: auto;
+            display: flex; 
+            gap: 10px;
+            justify-content: center;
+            background-color: teal;
+        }
+        h1{
+            background-color: teal;
+            color: white;
+            padding:10px
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Hour : <span id="hour">0</span></h1>
+        <h1>Minutes : <span id="min">0</span></h1>
+        <h1>Seconds : <span id="sec">0</span></h1>
+    </div>
+</body>
+
+<script>
+    let hours = document.getElementById("hour");
+    let mins = document.getElementById("min");
+    let secs = document.getElementById("sec");
+
+    let hour = 0;
+    let min = 0;
+    let sec = 0;
+
+    setInterval(function() {
+
+        if(min === 59){
+            hour++;
+            hours.innerText = hour;
+            min = 0;
+        }
+
+        if(sec === 59){
+            min++;
+            mins.innerText = min;
+            sec = 0;
+        }
+        sec++;
+        secs.innerText = sec;
+    }, 1000);
+</script>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      /* All Your css for Home page goes here  */
+      .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 30px 0px 30px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #filter{
+        display: flex;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        justify-content: center;
+        gap: 10px;
+      }
+      #sort{
+        display: flex;
+        margin: auto;
+      }
+      #menu-container{
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+        justify-content: center;
+      }
+      #menu-container > div{
+        width: 80%;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 20px;
+      }
+      #menu-container > div > img{
+        width: 100%;
+        height: 200px;
+      }
+      #menu-container > div > button{
+        display: flex;
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Web Coffee Shop Menu</h1>
+      <a href="./index.html">Home</a>
+      <a href="./order.html">Ordered</a>
+    </div>
+    <div id="filter">
+      <input type="number" id="lower" />
+      <input type="number" id="upper" />
+      <button id="filter-btn">Filter</button>
+    </div>
+    <select id="sort">
+      <option value="">Sort By Price</option>
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+    <h1 id="alert"></h1>
+    <div id="menu-container">
+      <!-- Here Append All the Items  -->
+    </div>
+  </body>
+  <script>
+    // All your JS code for Home Page goes here
+    const url = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee`;
+
+    async function FetchData(){
+      try{
+        let request = await fetch(url);
+        request = await request.json();
+        console.log(request)
+        Display(request.data)
+        // FilterMyData(request.data);
+      }catch(error){
+        console.log(error);
+      }
+    }
+    FetchData();
+
+    // let sortData = data.sort((a,b) =>{
+    //   if(sortValue === "AC"){
+    //     return a.price - b.price;
+    //     fetch( `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee?sort=price&order=asc.`)
+
+    //     .then((Response) => Response.json())
+    //     .then((data) =>{
+    //       data = data.data;
+    //       Display(data);
+    //     })
+    //     .catch((error) => console.log(error));
+    //   }
+    //   else{
+    //     return b.price -a.price;
+    //     fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee?sort=price&order=desc`)
+    //     .then((Response) => Response.json())
+    //     .then((data) =>{
+    //       data = data.data;
+    //       Display(data);
+    //     })
+    //     .catch((error) => console.log(error));
+    //   }
+    // })
+
+    // let filterData = document.getElementById("filter");
+    // filterData.addEventListener("change", () =>{
+    //   FetchData()
+    // })
+
+    // function FilterMyData(data){
+    //   let filterValue = filterData.value
+    //   if(filterValue === ""){
+    //   Display(data)
+    //   }else{
+    //     data = data.filter((product) =>{
+    //       return product.price == filterValue
+    //     })
+    //     Display(data)
+    //   }
+    // }
+
+    let Container  = document.getElementById("menu-container");
+    let MyOrder = JSON.parse(localStorage.getItem("buy")) || [];
+
+  function Display(data){
+    Container.innerHTML = "";
+    data.forEach((product) => {
+      let card = document.createElement("div");
+      let image = document.createElement("img");
+      let title = document.createElement("h1");
+      let ingredients = document.createElement("p");
+      let description = document.createElement("p");
+      let price = document.createElement("h4");
+      let buy = document.createElement("button");
+
+          buy.textContent = "Buy";
+          image.src = product.image;
+          title.textContent = product.title;
+          ingredients.textContent = product.ingredients;
+          description.textContent = product.description;
+          price.textContent = product.price;
+
+          buy.addEventListener("click",() =>{
+            if(checkOrder(product)){
+              alert("Product Already in Card");
+            }else{
+              MyOrder.push(product);
+              // console.log(product)
+              // console.log(MyOrder)
+              localStorage.setItem("buy",JSON.stringify(MyOrder))
+              alert("Product Add");
+            }
+          });
+          
+          card.append(image,ingredients,title,description,price,buy);
+          Container.append(card);
+    });
+  }
+
+  function checkOrder(product){
+    for(let x=0; x<MyOrder.length; x++){
+      if(MyOrder[x].id === product.id){
+        return true
+      }
+    }
+    return false
+  }
+  </script>
+</html>

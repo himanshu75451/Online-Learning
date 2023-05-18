@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Voucher Page</title>
+    <style>
+      /* All CSS Goes Here  */
+      .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #voucher-container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+      }
+      #voucher-container >div{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #voucher-container > div > img{
+        width: 100%;
+      }
+      #voucher-container > div > button{
+        background-color: rgb(47, 185, 240);
+        border: none;
+        color: #fff;
+        padding: 6px;
+        border-radius: 4px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <h1>Voucher Shop</h1>
+      <a href="./index.html">Home</a>
+      <a href="./my-voucher.html">My Voucher</a>
+    </div>
+    <h1 id="total">
+      Your total order value is :- <span id="order-total">0</span>
+    </h1>
+    <div id="cupon">
+      <input placeholder="Cupon:- Masai30" type="text" />
+      <button>Add Cupon</button>
+    </div>
+    <div id="voucher-container">
+      <!-- Here Append All the Favourites-->
+    </div>
+  </body>
+  <script>
+    // All JS Goes Here
+    let CartData = JSON.parse(localStorage.getItem("vouchers")) || [];
+    let Container = document.getElementById("voucher-container");
+
+    function Display(data){
+      Container.innerHTML = "";
+      data.forEach((product) => {
+        let card = document.createElement("div");
+        let image = document.createElement("img");
+        let name = document.createElement("h2");
+        let price = document.createElement("h4");
+        let Delete = document.createElement("button");
+
+            Delete.textContent = "Delete";
+            image.src = product.img;
+            name.textContent = product.name;
+            price.textContent = `₹${product.price}`;
+
+            Delete.addEventListener("click",() =>{
+              CartData = CartData.filter((ele) =>{
+                return ele.id !== product.id;
+              })
+                localStorage.setItem("vouchers",JSON.stringify(CartData))
+                Display();
+            });
+            card.append(image,name,price,buyCard);
+            Container.append(card);
+      });
+    }
+
+  </script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <style>
+        .container{
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+        .card{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 20px
+        }
+        .card img{
+            width: 100%;
+            height: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container"></div>
+</body>
+<script>
+    const API = "https://fakestoreapi.com/products";
+
+    let containerEl = document.querySelector(".container");
+
+    fetch(API)
+    .then((request) =>{
+        return request.json();
+    })
+    .then((data) =>{
+        console.log(data);
+        DisplayProducts(data);
+    })
+    .catch((error) =>{
+        console.log(error);
+    });
+
+    function DisplayProducts(data){
+        data.forEach(element => { 
+           let productCard = document.createElement("div");
+           productCard.setAttribute("class","card");
+
+           let img = document.createElement("img");
+           img.setAttribute("src",element.image);
+
+           let title = document.createElement("h2");
+           title.innerText = element.title;
+
+           let desc = document.createElement("p");
+           desc.innerText = element.description;
+
+           let price = document.createElement("h4");
+           price.textContent = element.price;
+
+           productCard.append(img, title, desc, price); 
+           containerEl.append(productCard);
+        });
+    }
+</script>
+</html>

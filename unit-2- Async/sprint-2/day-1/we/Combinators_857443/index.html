@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Our Expert</title>
+  <style>
+    #team-members{
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 0px 100px;
+    }
+    #team-members > div {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    #team-members > div:hover{
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    #team-members > div > img {
+      width: 100%;
+    }
+    .heading{
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .heading > h1{
+      color: #00838F;
+    }
+    #team-stats{
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      background-color: #FFB300;
+      padding: 15px 0px;
+      line-height: 0.5;
+      margin-top: 40px;
+    }
+    #team-stats > div {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+    #cards{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      width: 90%;
+      margin: auto;
+      padding: 15px;
+    }
+    #cards > div{
+      font-size: small;
+      text-align: center;
+    }
+    #cards > div > img{
+      width: 50px;
+      margin: auto; display: block;
+    }
+
+    @media only screen and (max-width: 800px){
+        #team-members{
+          grid-template-columns: repeat(2, 1fr);
+          padding: 0px 150px;
+        }
+    }
+    @media only screen and (max-width: 430px){
+        #team-members{
+          grid-template-columns: repeat(2, 1fr);
+          padding: 0px 150px;
+        }
+        #team-stats{
+          grid-template-columns: repeat(2, 1fr);
+        }
+        #cards{
+          grid-template-columns: repeat(1, 1fr);
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="heading">
+    <h1>Meet Our Expert Members</h1>
+    <p>Who are in extremely love with eco friendly system.</p>
+  </div>
+  <!-- Top-section -->
+  <div id="team-members">
+    <!-- This section should contain 4 children divs, each div should have img,h2,p -->
+    <div>
+      <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Images Error">
+      <h2>Ethel Davis</h2>
+      <p>Managing Director(Sales)</p>
+    </div>
+    <div>
+      <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Images Error">
+      <h2>Ethel Davis</h2>
+      <p>Managing Director(Sales)</p>
+    </div>
+    <div>
+      <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Images Error">
+      <h2>Ethel Davis</h2>
+      <p>Managing Director(Sales)</p>
+    </div>
+    <div>
+      <img src="https://images.pexels.com/photos/32976/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" alt="Images Error">
+      <h2>Ethel Davis</h2>
+      <p>Managing Director(Sales)</p>
+    </div>
+  </div>
+
+  <!-- Medium-section -->
+  <div id="team-stats">
+    <!-- This section should contain 5 children divs, each div should have h1,p -->
+    <div>
+      <h1>101</h1>
+      <p>Projects Complete</p>
+    </div>
+    <div>
+      <h1>1032</h1>
+      <p>Really Happy Clients</p>
+    </div>
+    <div>
+      <h1>1026</h1>
+      <p>Cups of Coffee Taken</p>
+    </div>
+    <div>
+      <h1>1212</h1>
+      <p>In House Professionals</p>
+    </div>
+    <div>
+      <h1>1212</h1>
+      <p>Total Tasks Completed</p>
+    </div>
+  </div>
+
+  <div class="heading">
+    <h1>Some Features that Made us Unique</h1>
+    <p>Who are in extremely love with eco friendly system.</p>
+  </div>
+
+  <!-- bottom-section -->
+  <div id="cards">
+    <!-- This section should contain 3 children divs, each div should have img,h2,p -->
+    <div>
+      <img src="./service-icon-1.png" alt="Icon Error">
+      <h2>Building Drawings</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem qui porro dolorem tenetur, animi velit suscipit ab omnis deserunt repellat.</p>
+    </div>
+    <div>
+      <img src="./service-icon-2.png" alt="Icon Error">
+      <h2>Painting Constructions</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem qui porro dolorem tenetur, animi velit suscipit ab omnis deserunt repellat.</p>
+    </div>
+    <div>
+      <img src="./service-icon-3.png" alt="Icon Error">
+      <h2>Repairing Constructions</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem qui porro dolorem tenetur, animi velit suscipit ab omnis deserunt repellat.</p>
+    </div>
+  </div>
+</body>
+
+</html>
+
+

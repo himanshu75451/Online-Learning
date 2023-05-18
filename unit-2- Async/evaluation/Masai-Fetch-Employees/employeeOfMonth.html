@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee of Month Page</title>
+    <style>
+      /* All Css of Employee page goes here  */
+      #employees{
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 15px;
+      }
+      #employees > div{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 10px;
+      }
+      #employees > div > button{
+        margin: auto;
+        display: block;
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Employee List</h1>
+      <a href="./index.html">Home</a>
+      <a href="./employeeOfMonth.html">Emplyee Of Month</a>
+    </div>
+    <div id="employees">
+      <!-- Here Append All the Vouchers  -->
+    </div>
+  </body>
+  <script>
+    /* All JS of Employee page goes here  */
+    let employeeData = JSON.parse(localStorage.getItem("employees-ls")) || [];
+    let Container = document.getElementById("employees");
+
+    function Display(data){
+      Container.innerHTML = "";
+      employeeData.forEach((member) => {
+        let card = document.createElement("div");
+        let name = document.createElement("h2");
+        let gender = document.createElement("p");
+        let department = document.createElement("p");
+        let salary = document.createElement("h5");
+        let deleteData = document.createElement("button");
+          deleteData.textContent = "Delete";
+          name.textContent = member.name;
+          gender.textContent = `Gender:-${member.gender}`;
+          department.textContent = `Department:-${member.department}`;
+          salary.textContent = `₹${member.salary}`;
+
+          deleteData.addEventListener("click",()=>{
+            employeeData = employeeData.filter((Element)=>{
+              return Element.name !== member.name;
+            })
+            localStorage.setItem("employees-ls",JSON.stringify(employeeData));
+            Display();
+          });
+
+        card.append(name,salary,gender,department,deleteData);
+        Container.append(card);
+      });
+    }
+    Display();
+
+  </script>
+</html>

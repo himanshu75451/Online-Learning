@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .box1{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            padding: 20px;
+        }
+        .box1 > div{
+            margin: auto;
+            
+        }
+        .box1 > div > div{
+            margin-bottom: 10px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+        .box2{
+            width: 90%;
+            margin: auto;
+            margin-top: 25px;
+        }
+        .box2 > div{
+            width: 47%;
+            margin: auto; 
+            align-items: center;
+            align-content: center;
+            display: flex;
+        }
+        .box2 > div > div{
+            padding: 18px;
+            border: 1px solid black;
+        }
+        .alldarkgreen > div{
+            background-color: rgb(88, 126, 74);
+        }
+        .alllightgreen > div{
+            background-color: #a1c497;
+        }
+
+
+
+        .green > div{
+            background-color: rgb(87, 196, 87);
+        }
+        .green > div:nth-child(1){
+            background-color: brown;
+        }
+        .pink > div{
+            background-color: rgb(253, 89, 144);
+        }
+        .pink > div:nth-child(1){
+            background-color: white;
+            border: transparent;
+        }
+
+
+        .lightpink > div:nth-child(1){
+            border: none;
+        }
+        .lightpink > div:nth-child(2){
+            border: none;
+        }
+        .lightpink > div:nth-child(3){
+            border: none;
+        }
+        .lightpink > div:nth-child(4){
+            border: none;
+        }
+        .lightpink > div:nth-child(5){
+            border: none;
+        }
+        .lightpink > div:nth-child(6){
+            border: 5px solid black;
+            padding: 18px;
+            background-color: rgb(254, 203, 211);
+        }
+        .lightpink > div:nth-child(7){
+            border: 5px solid black;
+            padding: 18px;
+            background-color: rgb(254, 203, 211);
+            margin-bottom: 0px;
+        }
+
+        
+        .blue > div:nth-child(1){
+            border: transparent;
+        }
+        .blue > div:nth-child(2){
+            border: transparent;
+        }
+        .blue > div:nth-child(3){
+            border: transparent;
+        }
+        .blue > div:nth-child(4){
+            background-color: blue;
+        }
+        .blue > div:nth-child(5){
+            background-color: blue;
+        }
+        .blue > div:nth-child(6){
+            background-color: blue;
+        }
+        .blue > div:nth-child(7){
+            background-color: blue;
+            margin-bottom: 0px;
+        }
+
+
+        .orange > div{
+            background-color: rgb(255, 138, 29);
+        }
+        .orange > div:nth-child(1){
+            background-color: white;
+            border: none;
+        }
+        .orange > div:nth-child(2){
+            background-color: purple;
+        }
+        .orange > div:nth-child(7){
+            background-color: rgb(114, 85, 141);
+        }
+
+
+        .darkgreen1 > div{
+            background-color: green;
+        }
+        .darkgreen1 > div:nth-child(1){
+            background-color: white;
+            border: transparent;
+        }
+        .darkgreen1 > div:nth-child(3){
+            background-color: purple;
+        }
+        .darkgreen1 > div:nth-child(4){
+            background-color: purple;
+        }
+        .darkgreen1 > div:nth-child(5){
+            background-color: rgb(255, 138, 29);
+        }
+        .darkgreen1 > div:nth-child(6){
+            background-color: rgb(255, 138, 29);
+        }
+        .darkgreen1 > div:nth-child(7){
+            background-color: rgb(114, 85, 141);
+        }
+
+
+        .darkgreen2 > div{
+            background-color: green;
+        }
+        .darkgreen2 > div:nth-child(1){
+            background-color: white;
+            border: transparent;
+        }
+        .darkgreen2 > div:nth-child(4){
+            background-color: purple;
+        }
+        .darkgreen2 > div:nth-child(5){
+            background-color: purple;
+        }
+        .darkgreen2 > div:nth-child(6){
+            background-color: rgb(255, 138, 29);
+        }
+        .darkgreen2 > div:nth-child(7){
+            background-color: rgb(114, 85, 141);
+        }
+
+
+        .darkgreen3 > div{
+            background-color: green;
+        }
+        .darkgreen3 > div:nth-child(1){
+            background-color: white;
+            border: transparent;
+        }
+        .darkgreen3 > div:nth-child(5){
+            background-color: purple;
+        }
+        .darkgreen3 > div:nth-child(6){
+            background-color: purple;
+        }
+        .darkgreen3 > div:nth-child(7){
+            background-color: rgb(114, 85, 141);
+        }
+
+
+        .darkpink > div{
+            background-color: rgb(228, 15, 146);
+        }
+        .darkpink > div:nth-child(1){
+            background-color: white;
+            border: transparent;
+        }
+        .darkpink > div:nth-child(7){
+            background-color: rgb(114, 85, 141);
+        }
+        .yellow > div{
+            background-color: yellow;
+        }
+        .yellow > div:nth-child(7){
+            background-color: rgb(114, 85, 141);
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <h1>THE PERIODIC TABLE OF ELEMENTS</h1>
+        <div class="box1">
+            <div class="green">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="pink">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="lightpink">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="blue">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="blue">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div> 
+            <div class="blue">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="blue">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="blue">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="blue">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="blue"> 
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="blue"> 
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="blue">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="orange">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="darkgreen1"> 
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="darkgreen2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>   
+            <div class="darkgreen3">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="darkpink">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="yellow">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+        </div>
+        <div class="box2">
+            <div class="alldarkgreen">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="alllightgreen">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

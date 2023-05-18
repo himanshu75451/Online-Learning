@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      /* All Your css here  */
+      table{
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Masai Country Records</h1>
+      <a href="./index.html">Home</a>
+      <a href="./visited.html">Visited</a>
+    </div>
+    <select id="sort">
+      <option value="">Sort By Population</option>
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+    <form>
+      <input type="text" placeholder="Search" id="search" />
+      <input type="submit" value="Search" />
+    </form>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Country</th>
+          <th>Rank</th>
+          <th>Population</th>
+          <th>Visited</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Here all rows will be appended  -->
+      </tbody>
+    </table>
+  </body>
+  <script>
+    // Write all JS here
+    const url = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-countries`;
+
+    let tbody = document.querySelector("tbody");
+
+    async function FetchData(){
+      try{
+        let respones = await fetch(url);
+        respones = await respones.json();
+        console.log(respones);
+        // fetchedData = respones.map(function(element){
+        //   return{
+        //     id : element.id,
+        //     country : element.country,
+        //     Rank : element.Rank,
+        //     population : element.population,
+        //   }
+        // })
+        Display(respones.data);
+       // FilterData(respones.data);
+      }catch(error){
+        console.log(error);
+      }
+    }
+    FetchData();
+
+    let searchFrom = document.getElementById("form");
+    searchFrom.addEventListener("sumbit", () =>{
+      FetchData()
+    })
+      ele.preventDefault();
+      
+      function FilterData(data){
+        let searchEl = searchFrom.search.value;
+        if(element.name.toUpperCase().includes(searchEl.toUpperCase()) === true){
+          Display(data);
+        }else{
+          data = data.filter((element) =>{
+            return element.country == searchEl;
+          })
+          Display(data);
+        }
+      }
+
+
+    let data = JSON.parse(localStorage.getItem("Visit")) || [];
+
+    function Display(data){
+      data.forEach((element,index) => {
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        let td4 = document.createElement("td");
+        let td5 = document.createElement("td");
+        
+        td1.textContent =element.id;
+        td2.textContent =element.country;
+        td3.textContent =element.Rank;
+        td4.textContent =element.population;
+        td5.textContent = "Visit";
+        
+        td5.addEventListener("click", function(){
+          data = data.filter((Element) =>{
+            return Element.id === element.id;
+          })
+          localStorage.setItem("data",JSON.stringify(data));
+          Display(data);
+
+        })
+        tr.append(td1,td2,td3,td4,td5);
+        tbody.append(tr);
+      });
+    }
+
+  </script>
+</html>

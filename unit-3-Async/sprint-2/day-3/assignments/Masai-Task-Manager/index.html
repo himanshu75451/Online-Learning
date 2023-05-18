@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Web20-C4</title>
+  </head>
+  <style>
+    #navbar{
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 10px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    #navbar > div{
+      width: 50%;
+      display: flex;
+      justify-content: space-around;
+    }
+    #create{
+      width: 30%;
+      margin: auto;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 10px;
+      margin-top: 30px;
+    }
+    form > input{
+      width: 50%;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    #priority{
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <div id="navbar">
+      <h2>Masai Task List</h2>
+      <div>
+        <a href="./index.html">
+          <h2>Home</h2>
+        </a>
+        <a href="./dashboard.html">
+          <h2>Dashboard</h2>
+        </a>
+        <a href="./Progress.html">
+          <h2>In-Progress</h2>
+        </a>
+        <a href="./Done.html">
+          <h2>Done</h2>
+        </a>
+      </div>
+    </div>
+    <div id="create">
+      <h1>Create A Task</h1>
+      <form>
+        <input id="name" placeholder="Task Name" type="text" /> <br>
+        <input id="desc" placeholder="Description" type="text" /> <br>
+        <label for="">Start Date:-</label> <br>
+        <input type="date" id="start" /> <br>
+        <label for="">End Date:-</label> <br>
+        <input type="date" id="end" /> <br>
+        <select id="priority">
+          <option value="">Select Priority</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select> <br>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+  <script src="./Scripts/index.js"></script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROMISE ON COUNT</title>
+</head>
+<body>
+    <input type="number" id="input">
+    <button>Apply</button>
+</body>
+
+<script>
+    let button = document.querySelector("button");
+    let input = document.querySelector("input");
+
+    button.addEventListener("click", () => {
+
+        let num = Number(input.value);
+        let promise = new Promise(function(resolve, reject){
+            if(num >= 0){
+                resolve("Positive");
+            }else{
+                reject("Negative")
+            }
+        });
+
+        promise.then((element) => {
+            alert(element);
+        })
+        .catch((error) => {
+            alert(error);
+        });
+    });
+</script>
+
+</html>

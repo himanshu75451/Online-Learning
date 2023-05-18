@@ -1,0 +1,17 @@
+#navbar{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 30px;
+}
+#navbar > div{
+    width: 30%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+

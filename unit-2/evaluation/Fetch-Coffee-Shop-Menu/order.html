@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Page</title>
+    <style>
+      /* All Your css for Order page goes here  */
+      .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 30px 0px 30px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #total{
+        display: flex;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        justify-content: center;
+        gap: 10px;
+      }
+      #cupon{
+        display: flex;
+        margin: auto;
+      }
+      #order-container{
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+        justify-content: center;
+      }
+      #order-container > div{
+        width: 80%;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 20px;
+      }
+      #order-container > div > img{
+        width: 100%;
+        height: 200px;
+      }
+      #order-container > div > button{
+        display: flex;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <h1>Web Coffee Shop Menu</h1>
+      <a href="./index.html">Home</a>
+      <a href="./order.html">Ordered</a>
+    </div>
+    <h1 id="total">
+      Your total order value is :- <span id="order-total">0</span>
+    </h1>
+    <div id="cupon">
+      <input type="text" />
+      <button>Add Cupon</button>
+    </div>
+    <div id="order-container">
+      <!-- Here Append All the Order Cards here-->
+    </div>
+  </body>
+  <script>
+    // All your JS code for Order Page goes here
+    let Container  = document.getElementById("order-container");
+    let order = JSON.parse(localStorage.getItem("buy")) || [];
+
+  function Display(data){
+    let total = document.getElementById("order-total");
+    Container.innerHTML = "";
+    data.forEach((product) => {
+      let card = document.createElement("div");
+      let image = document.createElement("img");
+      let title = document.createElement("h1");
+      let ingredients = document.createElement("p");
+      let description = document.createElement("p");
+      let quantity = document.createElement("span");
+      let price = document.createElement("h4");
+      let Cancel = document.createElement("button");
+      let increment = document.createElement("button");
+      let decrement = document.createElement("button");
+
+          quantity.textContent = product.quantity;
+          Cancel.textContent = "Cancel";
+          increment.textContent = "+";
+          decrement.textContent = "-";
+          image.src = product.image;
+          title.textContent = product.title;
+          ingredients.textContent = product.ingredients;
+          description.textContent = product.description;
+          price.textContent = product.price;
+
+          // buy.addEventListener("click",() =>{
+          //   if(checkOrder(product)){
+          //     alert("Product Already in Card");
+          //   }else{
+          //     order.push({...product,quantity:1});
+          //     localStorage.setItem("order-container",JSON.stringify(order))
+          //     alert("Product Add");
+          //   }
+          // });
+          Cancel.addEventListener("click", () =>{
+            order = order.filter((Element) =>{
+              return Element.id !== product.id;
+            })
+            localStorage.setItem("order-container",JSON.stringify(order))
+            Display();
+          });
+          increment.addEventListener("click",() =>{
+            product=product.quantity++
+            localStorage.setItem("order-container",JSON.stringify(order))
+            Display();
+          });
+          decrement.addEventListener("click",() =>{
+            if(product.quantity>1){
+              product=product.quantity--
+            localStorage.setItem("order-container",JSON.stringify(order))
+            Display();
+            }
+          });
+          card.append(image,ingredients,title,description,price,Cancel,increment,decrement);
+          Container.append(card);
+    });
+    let sum =0;
+    for(let x=0; x<order.length; x++){
+      sum+=Number(order[x].price)*Number(order[x].quantity);
+    }
+    total.textContent = sum;
+  }
+  Display(order);
+
+  function checkOrder(product){
+    for(let x=0; x<order.length; x++){
+      if(order[x].id === product.id){
+        return true
+      }
+    }
+    return false
+  }
+  </script>
+</html>
