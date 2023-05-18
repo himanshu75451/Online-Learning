@@ -7,35 +7,42 @@
     <title>Dominos</title>
     <style>
       /* Write all styles here  */
+
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      *{
+          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          box-sizing: border-box;
+          font-weight: bold;
+      }
       .nav{
         width: 100%;
         box-sizing: border-box;
       }
-      .nav > div{
+      .nav{
         width: 100%;
         box-sizing: border-box;
         margin: auto;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         padding: 0px 20px 0px 20px ;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
-      .nav > div > div{
-        margin: auto;
-        display: flex;
-      }
-      .nav > div > div > button{
+      .nav > div > button{
         background-color: red;
         border: none;
         color: white;
         padding: 20px  
       }
-      .nav > div > h1{
-        color: rgb(24, 144, 192);
+      .nav > h1{
+        color: #0157AD;
       }
-      .nav > div > div > p{
-        color: rgb(24, 144, 192);
+      .nav > div > p{
+        color: #0157AD;
+      }
+      .nav-manu{
+        margin: auto;
+        display: flex;
+        gap: 20px;
       }
 
       .top{
@@ -73,20 +80,22 @@
       .mid{
         width: 100%;
         margin: auto;
+        padding: 0px 100px;
       }
       .mid > h1{
         padding-left: 100px;
       }
       .mid > div{
         width: 100%;
+        box-sizing: border-box;
         display: grid;
-        justify-content: space-between;
         grid-template-columns: repeat(4, 1fr);
         gap: 15px 15px;
         text-align: center;
       }
       .mid > div > div {
-        padding: 20px 20px 20px 20px;
+        width: 100%;
+        padding: 20px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
       .mid > div > div > img{
@@ -126,7 +135,7 @@
 
       @media only screen and (max-width: 1000px) {
         /* Medium Screen  */
-      .nav > div > div >p{
+      .nav > div > p{
         margin: auto;
         display: none;
       }
@@ -148,7 +157,7 @@
 
       @media only screen and (max-width: 600px) {
         /* Small Screen  */
-      .nav > div > div > p{
+      .nav > div > p{
         margin: auto;
         display: none;
       }
@@ -171,9 +180,8 @@
     <div class="nav">
       <!-- Create the Navbar here  -->
       <!-- Use Flex to achieve the layout  -->
-      <div>
         <h1>Domino's Pizza</h1>
-        <div>
+        <div class="nav-manu">
           <p>OUR MENU</p>
           <p> DOMINO'S STPRES</p>
           <p>GIFT CARD</p>
@@ -183,7 +191,6 @@
         <div>
           <button>Download App</button>
         </div>
-      </div>
     </div>
     <div class="top">
       <h1>Order</h1>
@@ -237,52 +244,56 @@
           <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
           <h3>OUR MEMU</h3>
           <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
-          <P>________________________________</P>
+          <hr>
           <button>DISCOVER PIZZA</button>
         </div>
         <div>
           <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
           <h3>OUR MEMU</h3>
           <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
-          <P>________________________________</P>
-          <button>DISCOVER PIZZA</button>
-        </div><div>
-          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
-          <h3>OUR MEMU</h3>
-          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
-          <P>________________________________</P>
-          <button>DISCOVER PIZZA</button>
-        </div><div>
-          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
-          <h3>OUR MEMU</h3>
-          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
-          <P>________________________________</P>
+          <hr>
           <button>DISCOVER PIZZA</button>
         </div>
         <div>
           <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
           <h3>OUR MEMU</h3>
           <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
-          <P>________________________________</P>
+          <hr>
           <button>DISCOVER PIZZA</button>
         </div>
         <div>
           <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
           <h3>OUR MEMU</h3>
           <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
-          <P>________________________________</P>
+          <hr>
           <button>DISCOVER PIZZA</button>
-        </div><div>
+        </div>
+        <div>
           <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
           <h3>OUR MEMU</h3>
           <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
-          <P>________________________________</P>
+          <hr>
           <button>DISCOVER PIZZA</button>
-        </div><div>
+        </div>
+        <div>
           <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
           <h3>OUR MEMU</h3>
           <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
-          <P>________________________________</P>
+          <hr>
+          <button>DISCOVER PIZZA</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <hr>
+          <button>DISCOVER PIZZA</button>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="Error">
+          <h3>OUR MEMU</h3>
+          <P>Explore our range of delicious Pizzas, Delivered in 30 min's.</P>
+          <hr>
           <button>DISCOVER PIZZA</button>
         </div>
       </div>
